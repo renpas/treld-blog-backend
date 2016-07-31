@@ -133,7 +133,7 @@
   <rule ref="rulesets/java/pmd/optimizations.xml/PrematureDeclaration"> 			            <priority>5</priority></rule>
 
   <rule ref="rulesets/java/pmd/strictexception.xml/AvoidCatchingThrowable"> 		            <priority>5</priority></rule>
-  <!--<rule ref="rulesets/java/pmd/strictexception.xml/SignatureDeclareThrowsException">            <priority>5</priority></rule>-->
+  <!-- <rule ref="rulesets/java/pmd/strictexception.xml/SignatureDeclareThrowsException">            <priority>5</priority></rule> -->
   <rule ref="rulesets/java/pmd/strictexception.xml/ExceptionAsFlowControl"> 		            <priority>5</priority></rule>
   <rule ref="rulesets/java/pmd/strictexception.xml/AvoidCatchingNPE"> 				            <priority>5</priority></rule>
   <rule ref="rulesets/java/pmd/strictexception.xml/AvoidThrowingRawExceptionTypes">             <priority>5</priority></rule>
@@ -144,7 +144,7 @@
   <rule ref="rulesets/java/pmd/strictexception.xml/AvoidThrowingNewInstanceOfSameException">	<priority>5</priority></rule>
   <rule ref="rulesets/java/pmd/strictexception.xml/AvoidLosingExceptionInformation"> 			<priority>5</priority></rule>
 
-  <!-- <rule ref="rulesets/java/pmd/strings.xml/AvoidDuplicateLiterals">                              <priority>5</priority></rule> -->
+  <rule ref="rulesets/java/pmd/strings.xml/AvoidDuplicateLiterals">                              <priority>5</priority></rule>
   <rule ref="rulesets/java/pmd/strings.xml/StringInstantiation">                                 <priority>5</priority></rule>
   <rule ref="rulesets/java/pmd/strings.xml/StringToString">                                      <priority>5</priority></rule>
   <rule ref="rulesets/java/pmd/strings.xml/InefficientStringBuffering">                          <priority>5</priority></rule>
@@ -153,7 +153,7 @@
   <rule ref="rulesets/java/pmd/strings.xml/AppendCharacterWithChar">                             <priority>5</priority></rule>
   <rule ref="rulesets/java/pmd/strings.xml/ConsecutiveAppendsShouldReuse">                       <priority>5</priority></rule>
   <rule ref="rulesets/java/pmd/strings.xml/ConsecutiveLiteralAppends">                           <priority>5</priority></rule>
-  <rule ref="rulesets/java/pmd/strings.xml/UseIndexOfChar">                                      <priority>5</priority></rule>
+  <!-- <rule ref="rulesets/java/pmd/strings.xml/UseIndexOfChar">                                      <priority>5</priority></rule> -->
   <rule ref="rulesets/java/pmd/strings.xml/InefficientEmptyStringCheck">                         <priority>5</priority></rule>
   <rule ref="rulesets/java/pmd/strings.xml/InsufficientStringBufferDeclaration">                 <priority>5</priority></rule>
   <rule ref="rulesets/java/pmd/strings.xml/UselessStringValueOf">                                <priority>5</priority></rule>
@@ -166,5 +166,4 @@
 
   <rule ref="rulesets/java/pmd/typeresolution.xml/LooseCoupling">                               <priority>5</priority></rule>
   <rule ref="rulesets/java/pmd/typeresolution.xml/CloneMethodMustImplementCloneable">           <priority>5</priority></rule>
-  <rule ref="rulesets/java/pmd/typeresolution.xml/UnusedImports">                               <priority>5</priority></rule>
 </ruleset>

@@ -31,6 +31,8 @@ import br.com.treld.model.Post;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class PostControllerTest {
 
+	private static final String POST_API = "/api/post/";
+
 	@Autowired
 	private WebApplicationContext webApplicationContext;
 
@@ -57,13 +59,13 @@ public class PostControllerTest {
 	/*
 	 * This test validates the URI that is generated when a post is created. It
 	 * also validates if the post was really created.
-	 * 
+	 *
 	 * @Author: Eduardo
 	 */
 	@Test
 	public void validateUriPost() throws Exception {
 		String postJson = " { \"title\":\"Creating rest api\", \"body\":\"open your ide...\" } ";
-		ResultActions result = mockMvc.perform(post("/api/post/").content(postJson)
+		ResultActions result = mockMvc.perform(post(POST_API).content(postJson)
 				.contentType(MediaType.APPLICATION_JSON).session((MockHttpSession) session))
 				.andExpect(status().isCreated());
 		String localResourceCreated = result.andReturn().getResponse().getRedirectedUrl();
@@ -76,10 +78,10 @@ public class PostControllerTest {
 	@Test
 	public void validateModification() throws Exception {
 		String postJson = " { \"title\":\"Creating rest api part 2\", \"body\":\"open your eclipse...\" } ";
-		mockMvc.perform(put("/api/post/" + postCreatedInTest.getId()).session((MockHttpSession) session)
+		mockMvc.perform(put(POST_API + postCreatedInTest.getId()).session((MockHttpSession) session)
 				.content(postJson).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isNoContent());
 		ResultActions resultSearch = mockMvc
-				.perform(get("/api/post/" + postCreatedInTest.getId()).session((MockHttpSession) session))
+				.perform(get(POST_API + postCreatedInTest.getId()).session((MockHttpSession) session))
 				.andExpect(status().isOk());
 		String responseString = resultSearch.andReturn().getResponse().getContentAsString();
 		Post postModified = mapper.readValue(responseString, Post.class);
@@ -88,7 +90,7 @@ public class PostControllerTest {
 
 	@Test
 	public void validateDeletion() throws Exception {
-		mockMvc.perform(delete("/api/post/" + postCreatedInTest.getId()).session((MockHttpSession) session))
+		mockMvc.perform(delete(POST_API + postCreatedInTest.getId()).session((MockHttpSession) session))
 				.andExpect(status().isNoContent());
 	}
 
