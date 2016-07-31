@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import javax.servlet.Filter;
 import javax.servlet.http.HttpSession;
 
+import br.com.treld.repository.PostRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,6 +40,9 @@ public class PostControllerTest {
 	@Autowired
 	private Filter springSecurityFilterChain;
 
+    @Autowired
+    private PostRepository postRepository;
+
 	private MockMvc mockMvc;
 	private HttpSession session;
 	private ObjectMapper mapper = new ObjectMapper();
@@ -46,6 +50,7 @@ public class PostControllerTest {
 
 	@Before
 	public void setup() throws Exception {
+        postRepository.deleteAll();
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).addFilter(springSecurityFilterChain)
 				.build();
 		login();
